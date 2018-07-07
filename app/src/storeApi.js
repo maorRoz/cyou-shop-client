@@ -16,14 +16,8 @@ export async function getAllStores(){
     }
 }
 
-export function createStore(){
-    const store={
-        name: "",
-        address: "",
-        openingHours: "",
-        managerName: ""
-    }
-    return api.post('/store', store);
+export function createStore(newStore){
+    return api.post('/store', newStore);
 }
 
 export function removeStore(idToRemove){

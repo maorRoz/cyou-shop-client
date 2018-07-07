@@ -27,7 +27,7 @@ class Store extends Component {
         case "name" : this.setState({ name: event.target.value }); break;
         case "address" : this.setState({address: event.target.value}); break;
         case "openingHours" : this.setState({openingHours : event.target.value}); break;
-        case  "managerName" : this.setState({managerName : event.target.value})
+        default: this.setState({managerName : event.target.value}); 
       }
     }
     unWriteableRow(){
