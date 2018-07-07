@@ -7,6 +7,7 @@ const api = axios.create({
 export async function getAllStores(){
     try{
          const response = await api.get('/store')
+         console.log('store list length: '+response.data.length);
          return response.data;
     }
     catch(error){
@@ -31,5 +32,14 @@ export function removeStore(idToRemove){
     }
     console.log(JSON.stringify(storeToRemove));
     return api.delete('/store',{data: storeToRemove});
+}
+
+export function updateStore(idToUpdate,updatedStore){
+    const requestUpdate={
+        id: idToUpdate,
+        newStore: updatedStore
+    }
+    console.log(JSON.stringify(requestUpdate));
+    return api.put('/store',requestUpdate);
 }
 

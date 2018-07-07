@@ -22,7 +22,6 @@ class StorePanel extends Component {
         this.setState({data: response});
     }
     render() {
-        console.log('data: '+this.state.data.length);
         return (
         <Container>
             <StoreTable data={this.state.data} refresh={this.fetchStores}/>
