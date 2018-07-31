@@ -4,7 +4,8 @@ import {Table} from 'semantic-ui-react'
 
 class StoreTable extends Component {
     getStoreList(data){
-        return data.map((store) => <Store key={store._id} id={store._id} name={store.name} address={store.address}
+        if(data.map === undefined) return null;
+         return data.map((store) => <Store key={store._id} id={store._id} name={store.name} address={store.address}
              openingHours={store.openingHours} managerName={store.managerName} refresh={this.props.refresh}/>)
     }
     render() {
